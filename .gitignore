@@ -3,6 +3,34 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Папки сборки
+out/
+build/
+x64/
+Debug/
+Release/
+
+# Временные файлы Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+
+# Скачанные зависимости
+_deps/
+
+# Временные файлы
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.log
+*.tlog
+*.ninja_log
+
 # User-specific files
 *.rsuser
 *.suo
