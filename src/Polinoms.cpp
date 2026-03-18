@@ -40,7 +40,7 @@ Polinom::~Polinom() {
 }
 
 void Polinom::addMonom(double c, int d) {
-  if (c == 0) 
+  if (c == 0)
       return;
 
   Monom *prev = head;
@@ -75,7 +75,7 @@ void Polinom::print() {
   while (tmp != nullptr) {
     double coeff = tmp->coeff;
 
-    if (coeff > 0 && !first) 
+    if (coeff > 0 && !first)
         std::cout << "+";
 
     std::cout << coeff;
@@ -85,11 +85,11 @@ void Polinom::print() {
     int y = (d / 10) % 10;
     int z = d % 10;
 
-    if (x > 0) 
+    if (x > 0)
         std::cout << "x^" << x;
-    if (y > 0) 
+    if (y > 0)
         std::cout << "y^" << y;
-    if (z > 0) 
+    if (z > 0)
         std::cout << "z^" << z;
 
     tmp = tmp->next;
@@ -160,7 +160,7 @@ Polinom Polinom::operator*(const Polinom &other) const {
 Polinom Polinom::operator*(double value) const {
   Polinom res;
 
-  if (value == 0) 
+  if (value == 0)
     return res;
 
   const Monom *p1 = head->next;

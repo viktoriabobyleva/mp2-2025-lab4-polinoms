@@ -59,49 +59,49 @@ int main() {
     std::cin >> choice;
 
     switch (choice) {
-      case 1:
-        res = p1 + p2;
-        std::cout << "\nThe result of the addition: ";
-        res.print();
-        std::cout << "\n";
-        break;
-      case 2:
-        res = p1 - p2;
-        std::cout << "\nThe result of the subtraction: ";
-        res.print();
-        std::cout << "\n";
-        break;
-      case 3:
-        double value;
-        std::cout << "\nEnter the number to multiply: ";
-        std::cin >> value;
-        res = p1 * value;
-        std::cout << "\nThe result of multiplication by a number: ";
-        res.print();
-        std::cout << "\n";
-        break;
-      case 4:
-        res = p1 * p2;
-        std::cout << "\nThe result of multiplying polynomials: ";
-        res.print();
-        std::cout << "\n";
-        break;
-      case 5:
-        p1 = p2;
-        std::cout << "\nNow p1 is equal to p2.\n";
-        break;
-      case 6:
-        if (p1 == p2) {
-          std::cout << "\nThe polynomials are equal\n";
-        } else {
-          std::cout << "\nThe polynomials are different\n";
-        }
-        break;
-      case 0:
-        std::cout << "\nThe program is completed.\n";
-        break;
-      default:
-        std::cout << "\nIncorrect menu item!\n";
+    case 1:
+      res = p1 + p2;
+      std::cout << "\nThe result of the addition: ";
+      res.print();
+      std::cout << "\n";
+      break;
+    case 2:
+      res = p1 - p2;
+      std::cout << "\nThe result of the subtraction: ";
+      res.print();
+      std::cout << "\n";
+      break;
+    case 3:
+      double value;
+      std::cout << "\nEnter the number to multiply: ";
+      std::cin >> value;
+      res = p1 * value;
+      std::cout << "\nThe result of multiplication by a number: ";
+      res.print();
+      std::cout << "\n";
+      break;
+    case 4:
+      res = p1 * p2;
+      std::cout << "\nThe result of multiplying polynomials: ";
+      res.print();
+      std::cout << "\n";
+      break;
+    case 5:
+      p1 = p2;
+      std::cout << "\nNow p1 is equal to p2.\n";
+      break;
+    case 6:
+      if (p1 == p2) {
+        std::cout << "\nThe polynomials are equal\n";
+      } else {
+        std::cout << "\nThe polynomials are different\n";
+      }
+      break;
+    case 0:
+      std::cout << "\nThe program is completed.\n";
+      break;
+    default:
+      std::cout << "\nIncorrect menu item!\n";
     }
   } while (choice != 0);
 
