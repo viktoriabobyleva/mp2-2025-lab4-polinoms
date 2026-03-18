@@ -40,7 +40,8 @@ Polinom::~Polinom() {
 }
 
 void Polinom::addMonom(double c, int d) {
-  if (c == 0) return;
+  if (c == 0) 
+      return;
 
   Monom *prev = head;
   Monom *current = head->next;
@@ -74,7 +75,8 @@ void Polinom::print() {
   while (tmp != nullptr) {
     double coeff = tmp->coeff;
 
-    if (coeff > 0 && !first) std::cout << "+";
+    if (coeff > 0 && !first) 
+        std::cout << "+";
 
     std::cout << coeff;
 
@@ -83,9 +85,12 @@ void Polinom::print() {
     int y = (d / 10) % 10;
     int z = d % 10;
 
-    if (x > 0) std::cout << "x^" << x;
-    if (y > 0) std::cout << "y^" << y;
-    if (z > 0) std::cout << "z^" << z;
+    if (x > 0) 
+        std::cout << "x^" << x;
+    if (y > 0) 
+        std::cout << "y^" << y;
+    if (z > 0) 
+        std::cout << "z^" << z;
 
     tmp = tmp->next;
     first = false;
@@ -155,7 +160,8 @@ Polinom Polinom::operator*(const Polinom &other) const {
 Polinom Polinom::operator*(double value) const {
   Polinom res;
 
-  if (value == 0) return res;
+  if (value == 0) 
+    return res;
 
   const Monom *p1 = head->next;
 
@@ -168,7 +174,8 @@ Polinom Polinom::operator*(double value) const {
 }
 
 Polinom Polinom::operator=(const Polinom &other) {
-  if (this == &other) return *this;
+  if (this == &other)
+    return *this;
 
   Monom *p1 = head->next;
   while (p1 != nullptr) {
