@@ -1,4 +1,5 @@
 ﻿#include "Polinoms.h"
+
 #include <iostream>
 
 Monom::Monom() {
@@ -39,8 +40,7 @@ Polinom::~Polinom() {
 }
 
 void Polinom::addMonom(double c, int d) {
-  if (c == 0)
-    return;
+  if (c == 0) return;
 
   Monom *prev = head;
   Monom *current = head->next;
@@ -72,11 +72,9 @@ void Polinom::print() {
   bool first = true;
 
   while (tmp != nullptr) {
-
     double coeff = tmp->coeff;
 
-    if (coeff > 0 && !first)
-      std::cout << "+";
+    if (coeff > 0 && !first) std::cout << "+";
 
     std::cout << coeff;
 
@@ -85,12 +83,9 @@ void Polinom::print() {
     int y = (d / 10) % 10;
     int z = d % 10;
 
-    if (x > 0)
-      std::cout << "x^" << x;
-    if (y > 0)
-      std::cout << "y^" << y;
-    if (z > 0)
-      std::cout << "z^" << z;
+    if (x > 0) std::cout << "x^" << x;
+    if (y > 0) std::cout << "y^" << y;
+    if (z > 0) std::cout << "z^" << z;
 
     tmp = tmp->next;
     first = false;
@@ -135,34 +130,32 @@ Polinom Polinom::operator-(const Polinom &other) const {
   return res;
 }
 
-Polinom Polinom::operator*(const Polinom& other) const {
-    Polinom res;
+Polinom Polinom::operator*(const Polinom &other) const {
+  Polinom res;
 
-    for (const Monom* p1 = head->next; p1 != nullptr; p1 = p1->next) {
-        for (const Monom* p2 = other.head->next; p2 != nullptr; p2 = p2->next) {
-            int d1 = p1->degree;
-            int d2 = p2->degree;
+  for (const Monom *p1 = head->next; p1 != nullptr; p1 = p1->next) {
+    for (const Monom *p2 = other.head->next; p2 != nullptr; p2 = p2->next) {
+      int d1 = p1->degree;
+      int d2 = p2->degree;
 
-            if ((d1 / 100 + d2 / 100 > 9) ||
-                ((d1 / 10) % 10 + (d2 / 10) % 10 > 9) ||
-                (d1 % 10 + d2 % 10 > 9)) {
-                throw std::runtime_error("Degree above 9");
-            }
+      if ((d1 / 100 + d2 / 100 > 9) || ((d1 / 10) % 10 + (d2 / 10) % 10 > 9) ||
+          (d1 % 10 + d2 % 10 > 9)) {
+        throw std::runtime_error("Degree above 9");
+      }
 
-            int newDegree = d1 + d2;
-            double newCoeff = p1->coeff * p2->coeff;
+      int newDegree = d1 + d2;
+      double newCoeff = p1->coeff * p2->coeff;
 
-            res.addMonom(newCoeff, newDegree);
-        }
+      res.addMonom(newCoeff, newDegree);
     }
-    return res;
+  }
+  return res;
 }
 
 Polinom Polinom::operator*(double value) const {
   Polinom res;
 
-  if (value == 0)
-    return res;
+  if (value == 0) return res;
 
   const Monom *p1 = head->next;
 
@@ -175,8 +168,7 @@ Polinom Polinom::operator*(double value) const {
 }
 
 Polinom Polinom::operator=(const Polinom &other) {
-  if (this == &other)
-    return *this;
+  if (this == &other) return *this;
 
   Monom *p1 = head->next;
   while (p1 != nullptr) {
